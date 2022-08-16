@@ -10,9 +10,7 @@ async function bootstrap() {
   const microservice = await app.connectMicroservice({
     transport: Transport.RMQ,
     options: {
-      urls: [
-        'amqps://xlexssed:jrVpDLQi5xqww10gldxVh5S_CEpeR455@woodpecker.rmq.cloudamqp.com/xlexssed',
-      ],
+      urls: [process.env.RABBIT_URI],
       queue: 'main_queue',
       queueOptions: {
         durable: false,
